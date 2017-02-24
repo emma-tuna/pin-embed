@@ -13,7 +13,7 @@
                 title : 'Insert shortcode',
                 image : '../wp-content/plugins/pin-embed/images/pin-embed-button.png',
                 onclick : function() {
-                    ed.selection.setContent('[pin-embed url= size=small description=true]');
+                    ed.selection.setContent('[pin-embed url= size=small align=center description=true]');
                 }
             });
         },

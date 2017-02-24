@@ -17,6 +17,7 @@ if ( ! shortcode_exists( 'pin-embed' ) ) {
                 'url' => '',
                 'size' => 'small',
                 'description' => 'true',
+                'align' => 'center',
             ), $atts, 'pin_embed' );
 
 
@@ -24,12 +25,15 @@ if ( ! shortcode_exists( 'pin-embed' ) ) {
             return;
 
         wp_enqueue_script('pin-embed-js');
+        wp_enqueue_style('pin-embed-styles');
+
+        $classes = 'pe-align-' . $atts['align'];
 
 
-        $html = '<a data-pin-do="embedPin" ';
+        $html = '<div class="' . $classes . '"><a data-pin-do="embedPin" ';
         if ($atts['size'] == 'medium' || $atts['size'] == 'large') $html .= 'data-pin-width="' . $atts['size'] . '" ';
         if($atts['description'] == 'false') $html .= 'data-pin-terse="true" ';
-        $html .= 'href="' . $atts['url'] . '"></a>';
+        $html .= 'href="' . $atts['url'] . '"></a></div>';
 
         return $html;
     }

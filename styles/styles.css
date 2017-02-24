@@ -1,0 +1,13 @@
+.pe-align-center{
+    text-align: center;
+}
+.pe-align-right{
+    text-align: right;
+    float: right;
+    margin-left:15px;
+}
+.pe-align-left{
+    text-align: left;
+    float: left;
+    margin-right: 15px;
+}
